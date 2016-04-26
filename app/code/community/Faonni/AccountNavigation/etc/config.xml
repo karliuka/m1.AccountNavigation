@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Faonni
+ *  
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade module to newer
+ * versions in the future.
+ * 
+ * @package     Faonni_AccountNavigation
+ * @copyright   Copyright (c) 2015 Karliuka Vitalii(karliuka.vitalii@gmail.com) 
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+	<modules>
+		<Faonni_AccountNavigation>
+			<version>1.1.0</version>
+		</Faonni_AccountNavigation>
+	</modules>
+	<global>
+		<helpers>
+			<faonni_accountnavigation>
+				<class>Faonni_AccountNavigation_Helper</class>
+			</faonni_accountnavigation>
+		</helpers>
+		<models>
+            <faonni_accountnavigation>
+                <class>Faonni_AccountNavigation_Model</class>
+            </faonni_accountnavigation>
+		</models>
+		<events>
+			<controller_action_layout_generate_blocks_before>
+				<observers>
+					<faonni_accountnavigation_prepare_layout>
+						<class>faonni_accountnavigation/observer</class>
+						<method>prepareLayout</method>
+					</faonni_accountnavigation_prepare_layout>
+				</observers>
+			</controller_action_layout_generate_blocks_before> 			
+        </events>
+		<faonni_accountnavigation>
+			<link>
+				<account>account</account>
+				<account_edit>account_edit</account_edit>
+				<address_book>address_book</address_book>
+				<orders>orders</orders>
+				<billing_agreements>billing_agreements</billing_agreements>
+				<recurring_profiles>recurring_profiles</recurring_profiles>
+				<reviews>reviews</reviews>
+				<tags>tags</tags>
+				<wishlist>wishlist</wishlist>
+				<oauth_customer_tokens>OAuth Customer Tokens</oauth_customer_tokens>
+				<newsletter>newsletter</newsletter>
+				<downloadable_products>downloadable_products</downloadable_products>
+			</link>		
+        </faonni_accountnavigation>		
+	</global>
+    <default>
+        <faonni_accountnavigation>
+            <general>
+                <active>1</active>
+            </general>
+        </faonni_accountnavigation>
+    </default>		
+</config> 
